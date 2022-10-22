@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "mergeTwoLists.C": "cpp",
+        "windows.h": "c",
+        "stdlib.h": "c"
+    }
+}
