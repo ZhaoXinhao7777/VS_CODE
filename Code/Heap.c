@@ -219,6 +219,8 @@ int main()
 }
 #endif
 
+//顺序表示
+
 int Less(int left,int right)
 {
     return left<right;
@@ -237,7 +239,7 @@ void Swap(DataType *left,DataType *right)
     *right=temp;
 }
 
-//堆的构建
+//堆的构建  向下调整    O(N)
 void HeapCreate(Heap* hp,DataType* arr,int n,PFUNC Compare  )
 {
     hp->array=(DataType*)malloc(sizeof(DataType)*n);
@@ -296,7 +298,7 @@ void CheckHeapCapacity(Heap *hp)
 
 }
 
-//堆的插入
+//堆的插入 向上调整  O(NlogN)
 void HeapPush(Heap* hp,DataType data)
 {
 //0.判断空间是否已满
@@ -392,6 +394,8 @@ void AdjustUp(Heap *hp,int child)
         return ;
     }
 }
+
+
 //相较于向下调整，向上调整相对简单
 //因为在向上调整时，其原有序列已经有序，仅需一个劲往上比较即可，遇到条件合适，即刻退出函数
 
@@ -401,8 +405,10 @@ void TestHeap()
     Heap hp;
     int size=sizeof(arr)/sizeof(arr[0]);
 
+
     //注意此处第四个参数 利用函数指针来确定创建的是大堆（Greater）还是小堆(Less)
     HeapCreate(&hp,arr,size,Greater);
+
 
     printf("size=%d\n",HeapSize(&hp));
     printf("HeapTop=%d\n",HeapTop(&hp));
@@ -416,9 +422,12 @@ void TestHeap()
     HeapPush(&hp,20);
     HeapPush(&hp,15);
 
+    HeapPrint(&hp);
+ 
     //.....
     HeapDestory(&hp);
 }
+
 
 int main()
 {
