@@ -1,5 +1,5 @@
-#include<iostream>
-#include<stdlib.h>
+#include <iostream>
+#include <stdlib.h>
 
 using namespace std;
 #if 0
@@ -282,7 +282,7 @@ int main()
 //C++在函数返回值位置控制更加严格
 //C语言中
 
-#include<stdio.h>
+#include <stdio.h>
 
 //没有给出明确的返回值类型
 Add(int a,int b)
@@ -706,8 +706,8 @@ int main()
 }
 #endif
 #if 0
-#include<assert.h>
-#include<string.h>
+#include <assert.h>
+#include <string.h>
 struct Student{
     char name[20];
     char gender[3];
@@ -802,7 +802,7 @@ int main()
 }
 #endif
 #if 0
-#include<time.h>
+#include <time.h>
 struct SeqList
 {
     int arr[10000];
