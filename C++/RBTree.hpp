@@ -183,9 +183,12 @@ private:
     }
     void InOrder(Node *root)
     {
-        InOrder(root->_left);
-        cout << root->_data << " ";
-        InOrder(root->_right);
+        if (root)
+        {
+            InOrder(root->_left);
+            cout << root->_data << " ";
+            InOrder(root->_right);
+        }
     }
 
     Node *LeftMost()
@@ -218,7 +221,7 @@ private:
         Node *subR = parent->_right;
         Node *subRL = subR->_left;
         parent->_right = subRL;
-        if (subR)
+        if (subRL)
         {
             subRL->_parent = parent;
         }
@@ -232,7 +235,7 @@ private:
         }
         else
         {
-            if (parent == parent->_left)
+            if (parent == pparent->_left)
             {
                 pparent->_left = subR;
             }
